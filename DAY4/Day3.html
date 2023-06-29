@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day3 Activity</title>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+
+  <body style="background-color: rgb(231, 205, 194)">
+    <!--Material Box-->
+    <br />
+    <div class="card-panel brown lighten-1 grey-text text-lighten-3">
+      <h1 style="font-family: Tahoma">Material Box</h1>
+      <h5>by: Charlz Yvan Bracero</h5>
+    </div>
+    <div>
+      <div class="row">
+        <div class="col s3">
+          <img
+            class="materialboxed"
+            src="/images/coffee beans.jpg"
+            alt="Image 1"
+            width="100%"
+          />
+        </div>
+        <div class="container">
+          <p style="text-align: justify; text-indent: 60px; font-size: large">
+            One of the most popular drinks consumed worldwide is coffee. Many
+            people enjoy it as a favorite morning pick-me-up because to its
+            energizing flavor and rich scent. The coffee market is global, and
+            many geographical areas produce beans with varied tastes and
+            qualities. Coffee aficionados may discover a wide variety of tastes,
+            from the delicate and subtle Arabica beans of Latin America to the
+            powerful and bold Robusta beans of Asia. Coffee fans throughout the
+            world are treated to a pleasurable sensory experience thanks to the
+            brewing process, roast degree, and brewing techniques, which all
+            contribute to the distinctive flavors and complexity experienced in
+            a cup of coffee.
+          </p>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Initialize Material Box
+          var elems = document.querySelectorAll(".materialboxed");
+          var options = {
+            inDuration: 300, // Transition duration when opening the image
+            outDuration: 200, // Transition duration when closing the image
+            onOpenEnd: function () {
+              document.body.style.overflow = "hidden"; // Prevent scrolling when image is open
+            },
+            onCloseEnd: function () {
+              document.body.style.overflow = ""; // Allow scrolling when image is closed
+            },
+          };
+          var instances = M.Materialbox.init(elems, options);
+        });
+      </script>
+    </div>
+    <br />
+    <div class="card-panel brown lighten-2 grey-text text-lighten-3">
+      <h1 style="font-family: tahoma">Slider with initialization and Option</h1>
+    </div>
+
+    <!--Modal-->
+    <div id="media-modal" class="modal">
+      <div class="modal-content">
+        <h4>Media Material Box</h4>
+        <img class="materialboxed" width="650" src="/images/coffee.jpg" />
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Close</a
+        >
+      </div>
+    </div>
+
+    <!--Slider with Initalization -->
+    <div class="slider">
+      <ul class="slides">
+        <li>
+          <img src="/images/coffeee.jpg" />
+          <div class="caption center-align">
+            <h3 style="color: black">First Slide</h3>
+            <h5 style="color: black">This is the first slide.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="/images/milktea.jpg" />
+          <div class="caption left-align">
+            <h3 style="color: black">Second Slide</h3>
+            <h5 style="color: black">This is the second slide.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="/images/coffeee.jpg" />
+          <div class="caption right-align">
+            <h3 style="color: black">Third Slide</h3>
+            <h5 style="color: black">This is the third slide.</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Option in Materialize CSS -->
+    <div class="input-field col s12">
+      <select>
+        <option value="" disabled selected>Type of Transaction</option>
+        <option value="option1">Cash on delivery</option>
+        <option value="option2">Bank Account</option>
+        <option value="option3">Gcash</option>
+      </select>
+      <label>Select Option</label>
+    </div>
+
+    <!--Initialize slider and option-->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Media Material Box
+        var mediaElems = document.querySelectorAll(".materialboxed");
+        M.Materialbox.init(mediaElems);
+
+        // Initialize Slider
+        var sliderElems = document.querySelectorAll(".slider");
+        M.Slider.init(sliderElems);
+
+        // Initialize Select Option
+        var selectElems = document.querySelectorAll("select");
+        M.FormSelect.init(selectElems);
+      });
+    </script>
+    <br />
+    <!--button-->
+    <p style="margin-left: 100px" id="demo">
+      press the confirm button after selecting
+    </p>
+
+    <div class="container">
+      <button
+        style="
+          padding: 10px 20px;
+          background-color: #a68158;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-family: 'Roboto', sans-serif;
+          font-size: 16px;
+          text-transform: uppercase;
+        "
+        type="button"
+        onclick='document.getElementById("demo").innerHTML = "Now chek your email for verification of your order, THANK YOU"'
+      >
+        Confirm
+      </button>
+    </div>
+  </body>
+</html>

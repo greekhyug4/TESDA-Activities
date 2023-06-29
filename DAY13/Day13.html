@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 13 Activity</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+
+  <body
+    style="
+      background-image: url(d13.images/coffee.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    "
+  >
+    <div class="container">
+      <h1 style="color: rgb(184, 131, 62); text-align: center">PARALLAX</h1>
+      <hr />
+      <p
+        style="
+          text-align: justify;
+          text-indent: 13%;
+          font-family: georgia;
+          font-weight: bold;
+        "
+      >
+        Parallax is an effect where the background content or image in this
+        case, is moved at a different speed than the foreground content while
+        scrolling. Check out the demo to get a better idea of it.
+      </p>
+    </div>
+
+    <!--BUTTON FOR PARALLAX HTML DOC-->
+    <a href="Day13tryme.html" target="_blank">
+      <button
+        style="
+          background: linear-gradient(
+            45deg,
+            rgb(75, 46, 13),
+            rgb(194, 166, 134)
+          );
+          color: #fff;
+          padding: 15px 20px;
+          width: 30%;
+          text-transform: uppercase;
+          font-size: 15px;
+          font-weight: bold;
+          border-radius: 5px;
+          letter-spacing: 1px;
+          cursor: pointer;
+          border: none;
+          margin: 8px 500px;
+        "
+      >
+        Try me
+      </button>
+    </a>
+
+    <!--MODAL-->
+
+    <div class="container">
+      <h1 style="color: rgb(184, 131, 62); text-align: center">MODALS</h1>
+      <hr />
+      <p
+        style="
+          text-align: justify;
+          text-indent: 13%;
+          font-family: georgia;
+          font-weight: bold;
+        "
+      >
+        Use a modal for dialog boxes, confirmation messages, or other content
+        that can be called up. In order for the modal to work you have to add
+        the Modal ID to the link of the trigger. To add a close button, just add
+        the class .modal-close to your button.
+      </p>
+    </div>
+
+    <!-- Modal Structure -->
+    <div class="container" style="margin-left: 500px">
+      <button class="btn red modal-trigger" data-target="terms">COFFEE</button>
+      <button class="btn brown modal-trigger" data-target="termss">
+        MILK TEA
+      </button>
+      <button class="btn orange modal-trigger" data-target="termsss">
+        CORN DOG
+      </button>
+      <!--FIRST MODAL-->
+      <div class="modal" id="terms">
+        <div class="modal-content" style="background-color: #f0d7c3">
+          <h3>Trivia for Coffee</h3>
+          <p style="text-align: justify; text-indent: 15%">
+            Coffee beans are actually seeds: The coffee "bean" is the pit or
+            seed of a bright red or purple fruit called a coffee cherry. Coffee
+            is one of the most traded commodities: It is second only to oil in
+            terms of its global economic importance. The word "coffee" has
+            various origins: The word "coffee" is believed to have originated
+            from the Arabic word "qahwah" or the Turkish word "kahve." Coffee
+            was discovered in Ethiopia: According to legend, coffee was
+            discovered by a goat herder named Kaldi in Ethiopia in the 9th
+            century. He noticed that his goats became energetic after eating the
+            berries from a certain tree. Brazil is the world's largest producer:
+            Brazil is the largest producer of coffee, responsible for about
+            one-third of the world's total coffee supply. Espresso is not a type
+            of coffee bean: Espresso is a brewing method, not a type of coffee
+            bean. It is made by forcing hot water through finely ground coffee
+            under high pressure.
+          </p>
+        </div>
+        <div class="modal-footer" style="background-color: #eeaf7b">
+          <button class="btn teal modal-close">DONE</button>
+          <button class="btn red modal-close">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!--ANOTHER MODAL-->
+    <div class="modal modal-fixed-footer" id="termss">
+      <div class="modal-content" style="background-color: #eec19c">
+        <h3>Trivia for Milktea</h3>
+        <p style="text-align: justify; text-indent: 15%">
+          Origin of milk tea: Milk tea, also known as bubble tea or boba tea,
+          originated in Taiwan in the 1980s. It was created as a variation of
+          traditional Taiwanese tea by adding milk and tapioca pearls. Tapioca
+          pearls: The signature element of milk tea is the tapioca pearls, also
+          known as boba. These small, chewy balls are made from tapioca starch
+          and are typically added to the tea for a unique texture and flavor.
+          Varieties of milk tea: Milk tea comes in a variety of flavors and
+          types. Some popular options include classic milk tea, matcha milk tea,
+          taro milk tea, and fruit-flavored milk tea. Bubble tea's popularity:
+          Milk tea has gained immense popularity worldwide, especially among
+          younger generations. It has become a trendy and widely consumed
+          beverage in many countries.
+        </p>
+      </div>
+      <div class="modal-footer" style="background-color: #f0ae78">
+        <button class="btn teal modal-close">DONE</button>
+        <button class="btn red modal-close">Cancel</button>
+      </div>
+    </div>
+
+    <!--LAST MODAL-->
+    <div class="modal bottom-sheet" id="termsss">
+      <div class="modal-content" style="background-color: #f0ae78">
+        <h3>Trivia for Corndog</h3>
+        <p style="text-align: justify; text-indent: 15%">
+          Invention of the corndog: The corndog, also known as a corn dog or a
+          Pronto Pup, is believed to have been invented in the United States.
+          Its exact origin is disputed, but it is often credited to two men:
+          George F. N. McFarland and Carl and Neil Fletcher. They independently
+          introduced the corndog at the Texas State Fair and the Iowa State
+          Fair, respectively, in the 1940s. The corndog's batter: The
+          traditional corndog batter is made by combining cornmeal, flour,
+          sugar, salt, and buttermilk. The hot dog is skewered with a stick,
+          dipped in the batter, and deep-fried until golden brown. Popular fair
+          food: Corndogs are commonly associated with fairs, carnivals, and
+          amusement parks. They have become a classic staple of fairground
+          cuisine and are enjoyed by people of all ages. International
+          variations: While corndogs are most commonly associated with the
+          United States, variations of this deep-fried treat can be found in
+          different parts of the world. For example, in South Korea, there is a
+          popular street food called "hotteok," which is a sweet pancake filled
+          with ingredients like sugar, cinnamon, and nuts, and can also include
+          a hot dog.
+        </p>
+      </div>
+      <div class="modal-footer" style="background-color: #f0ae78">
+        <button class="btn teal modal-close">DONE</button>
+        <button class="btn red modal-close">Cancel</button>
+      </div>
+    </div>
+
+    <!--jscript for modal-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const box = document.querySelectorAll(".modal");
+        M.Modal.init(box, {});
+      });
+    </script>
+  </body>
+</html>

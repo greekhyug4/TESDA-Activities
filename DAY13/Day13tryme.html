@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+      .parallax-container {
+        height: 1000px;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body style="background-color: #f39e6c">
+    <div class="container">
+      <h1 style="color: rgb(0, 0, 0); text-align: center">Parallax Sample</h1>
+      <hr />
+    </div>
+
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header">Americano</h2>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="d13.images/Americano.jpg" />
+      </div>
+    </div>
+
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header">Espresso</h2>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="d13.images/espresso.png" /></div>
+    </div>
+
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header">Macchiato</h2>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="d13.images/macchiato.jpg" /></div>
+    </div>
+
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header">Latte</h2>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="d13.images/latte.jpg" />
+      </div>
+    </div>
+
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header">Mocha</h2>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="d13.images/mocha.jpg" />
+      </div>
+    </div>
+
+    <br />
+
+    <!--BUTTON TO GO BACK TO ORIG. HTML DOC-->
+    <a href="Day13.html" target="_blank">
+      <button
+        style="
+          background: linear-gradient(
+            45deg,
+            rgb(75, 46, 13),
+            rgb(194, 166, 134)
+          );
+          color: #fff;
+          padding: 15px 20px;
+          width: 30%;
+          text-transform: uppercase;
+          font-size: 15px;
+          font-weight: bold;
+          border-radius: 5px;
+          letter-spacing: 1px;
+          cursor: pointer;
+          border: none;
+          margin: 8px 500px;
+        "
+      >
+        Thank you!
+      </button>
+    </a>
+    <!--JScript-->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".parallax");
+        var instances = M.Parallax.init(elems);
+      });
+    </script>
+  </body>
+</html>
