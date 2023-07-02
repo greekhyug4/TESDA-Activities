@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brewtiful</title>
+
+    <!--  Font Awesome CDN link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!--Matarialize link-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!--Materials icon link-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <style>
+      /*arrow up button*/
+      .arrow-up {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 38px;
+        height: 40px;
+        background-color: #ebc9b7;
+        color: #6d3616;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .arrow-up:hover {
+        background-color: #3d2410;
+      }
+
+      /*add to cart button*/
+      .floating-button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .card-image:hover .floating-button {
+        opacity: 1;
+      }
+
+      .floating-button a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #d2a679; /* Light brown color */
+        border-radius: 50%;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
+
+      .floating-button a:hover {
+        transform: scale(1.2); /*resize*/
+      }
+
+      /* Material Box */
+      .materialboxed {
+        width: 250px;
+      }
+
+      /*Cursor card image*/
+      .card-image img {
+        cursor: pointer;
+      }
+
+      /*Image card-content*/
+      .card-content p {
+        text-align: justify;
+        text-indent: 15%;
+      }
+
+      /*aboutus MY STORY n MY MISSION*/
+      .aboutus {
+        background-color: #472c10;
+        color: rgb(255, 255, 255);
+        text-align: justify;
+        text-indent: 15%;
+      }
+
+      /* Modals */
+      .modal {
+        max-width: 600px;
+        padding: 20px;
+        margin: 40px auto;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background: url(/TESDA.project/index.img/coffee\ beans.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    "
+  >
+    <!-- Navbar -->
+    <nav style="background-color: #795548 !important">
+      <a
+        href="#"
+        data-target="mobile-nav"
+        class="sidenav-trigger"
+        style="
+          display: inline;
+          top: 0;
+          left: 0;
+          width: 250px;
+          height: 100%;
+          z-index: 999;
+        "
+        ><i class="material-icons">menu</i></a
+      >
+      <div class="nav-wrapper container">
+        <div
+          style="
+            font-family: georgia;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+          "
+        >
+          <a href="index.html" class="brand-logo" style="margin: 0"
+            >Brewtiful
+            <i
+              class="fas fa-coffee coffee-icon"
+              style="font-size: 25px; color: rgb(250, 243, 243); height: 100%"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!--  Sidenavbar -->
+    <ul class="sidenav" id="mobile-nav" style="height: 100%">
+      <!--profile inside  sidenav-->
+      <li>
+        <div class="user-view">
+          <!--background image-->
+          <div class="background">
+            <img
+              src="index.img/slide1.jpg"
+              style="object-fit: cover; height: 100%; width: 100%"
+            />
+          </div>
+          <a href="#user"
+            ><img
+              class="circle circle-image"
+              style="object-fit: cover"
+              src="index.img/charlz.jpg"
+          /></a>
+          <a href="#"
+            ><span class="white-text name">Charlz Yvan Bracero</span></a
+          >
+          <a href="mailto:bracerocharlzyvan32@gmail.com"
+            ><span class="white-text email"
+              >bracerocharlzyvan32@gmail.com</span
+            ></a
+          >
+        </div>
+      </li>
+      <li><a href="#coffees">Coffees</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+
+    <!-- Slider -->
+    <div class="slider" style="height: 400px">
+      <ul class="slides">
+        <!--slide 1-->
+        <li>
+          <img src="index.img/slide.jpg" alt="Coffee 1" />
+          <div class="caption center-align">
+            <h3 style="color: #ffffff; font-weight: 500; font-family: georgia">
+              Welcome to My Coffee Website
+            </h3>
+          </div>
+        </li>
+
+        <!--slide 2-->
+        <li>
+          <img src="index.img/slide2.jpg" alt="Coffee 2" />
+          <div class="caption left-align">
+            <h3 style="color: #ffffff; font-weight: 500; font-family: georgia">
+              Discover the Best Coffees Around the World
+            </h3>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <br />
+
+    <!--COFFEE SECTION --->
+    <section id="coffees" class="section">
+      <h2
+        class="center-align"
+        style="color: #ffffff; font-weight: 600; font-family: georgia"
+      >
+        Types of Coffees
+      </h2>
+      <div class="row">
+        <!--Espresso-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/espresso.png"
+                alt="Espresso"
+                class="materialboxed"
+              />
+              <span class="card-title">Espresso</span>
+              <!--Add to cart button-->
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                Espresso is a concentrated form of coffee that originated in
+                Italy. It is made by forcing hot water under high pressure
+                through finely ground coffee beans. The result is a small,
+                concentrated shot of coffee with a rich and intense flavor.
+                Espresso is characterized by its bold and robust taste.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--Latte-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/latte.jpeg"
+                alt="Latte"
+                class="materialboxed"
+              />
+              <span class="card-title">Latte</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                Latte is a popular coffee drink that originated in Italy. It
+                consists of a shot of espresso mixed with steamed milk, topped
+                with a layer of milk foam. The steamed milk adds a creamy
+                texture and mellows the strong flavor of espresso, resulting in
+                a balanced and smooth taste.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--Americano-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/Americano.jpg"
+                alt="Americano"
+                class="materialboxed"
+              />
+              <span class="card-title">Americano</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                The Americano is a popular coffee drink that originated in the
+                United States. It is made by diluting a shot or two of espresso
+                with hot water, resulting in a larger and milder cup of coffee
+                compared to espresso. The addition of hot water helps to balance
+                the intensity of the espresso.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--Cappuccino-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/Capuccino.jpg"
+                alt="Cappuccino"
+                class="materialboxed"
+              />
+              <span class="card-title">Cappuccino</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                Cappuccino is an Italian coffee beverage that originated in
+                Italy. It is made by combining equal parts of espresso, steamed
+                milk, and milk foam. The espresso provides a strong and rich
+                flavor, while the steamed milk adds a velvety texture, and the
+                milk foam creates a frothy and light topping.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Second Row-->
+      <div class="row">
+        <!--MACCHIATO-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/macchiato.jpg"
+                alt="Macchiato"
+                class="materialboxed"
+              />
+              <span class="card-title">Macchiato</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                Macchiato is an Italian coffee drink that translates to
+                "stained" or "marked." It is typically made by adding a small
+                amount of foamed milk or steamed milk to a shot of espresso. The
+                milk "stains" or "marks" the espresso, creating a layered,
+                balanced flavor profile, and macchiatos can be enjoyed in
+                different variations.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--MOCHA-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/mocha.jpg"
+                alt="Mocha"
+                class="materialboxed"
+              />
+              <span class="card-title">Mocha</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                Mocha, also known as a Mochaccino, is a coffee drink that
+                combines espresso, steamed milk, and chocolate. It originated in
+                Yemen, where Mocha coffee beans were first cultivated. The
+                combination of rich espresso, creamy milk, and the indulgent
+                flavor of chocolate creates a delightful and decadent beverage.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--TURKISH COFFEE-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/turkish-coffee.jpg"
+                alt="Turkish Coffee"
+                class="materialboxed"
+              />
+              <span class="card-title">Turkish Coffee</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                urkish coffee is a traditional method of preparing and enjoying
+                coffee that has been practiced for centuries in Turkey and other
+                parts of the Middle East and Balkans. It is made by finely
+                grinding coffee beans into a powder-like consistency and then
+                boiling it in a special pot called a cezve. The coffee is
+                typically prepared with sugar and served unfiltered.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--Irish Coffee-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/irish-coffee.jpg"
+                alt="Irish Coffee"
+                class="materialboxed"
+              />
+              <span class="card-title">Irish Coffee</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                Irish Coffee is a classic cocktail that combines hot coffee,
+                Irish whiskey, sugar, and topped with a layer of whipped cream.
+                It originated in Ireland and is often served in a glass mug to
+                showcase its layers.The warmth of the coffee, the smoothness of
+                the whiskey, and the sweetness of the whipped cream create a
+                delightful blend of flavors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Third Row-->
+      <div class="row">
+        <!--ETHIOPIAN COFFEE-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/Ethiopian-Coffee.jpg"
+                alt="Ethiopian Coffee"
+                class="materialboxed"
+              />
+              <span class="card-title">Ethiopian Coffee</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                Ethiopian coffee holds a special place in the world of coffee as
+                Ethiopia is considered the birthplace of coffee itself.
+                Ethiopian coffee is known for its exceptional quality, diverse
+                flavors, and distinctively fruity and floral notes. It is often
+                grown at high altitudes and hand-picked, then roasted to
+                perfection, resulting in a rich and aromatic cup of coffee.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--GREEK FRAPPE-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/Greek frappe.jpeg"
+                alt="Greek Frappé"
+                class="materialboxed"
+              />
+              <span class="card-title">Greek Frappé</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                Greek Frappé is a popular iced coffee beverage that originated
+                in Greece. It is made by mixing instant coffee, sugar, and
+                water, and then shaking or blending it until it becomes frothy.
+                The mixture is then poured over ice cubes and served with a
+                straw. Greek Frappé is a refreshing and invigorating drink, and
+                perfect for hot summer days.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--FLAT WHITE COFFEE-->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/Flat-White-Coffee.jpg"
+                alt="Flat White Coffee "
+                class="materialboxed"
+              />
+              <span class="card-title">Flat White Coffee</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                The Flat White is a coffee drink that originated in Australia
+                and New Zealand, although its exact origins are a subject of
+                debate. It is made by pouring a double shot of espresso over
+                steamed milk, creating a velvety and creamy texture. Unlike a
+                cappuccino or latte, the milk in a Flat White is micro-textured,
+                resulting in a smoother and less foamy consistency.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--BARAKO COFFEE -->
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="index.img/Barako coffee.jpg"
+                alt="Barako Coffee"
+                class="materialboxed"
+              />
+              <span class="card-title">Barako Coffee</span>
+              <div class="floating-button">
+                <a href="#">
+                  <i class="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                Barako coffee is a type of coffee that is indigenous to the
+                Philippines, particularly grown in the provinces of Batangas and
+                Cavite. It is known for its strong and bold flavor profile, with
+                earthy and nutty undertones. Barako coffee is typically made
+                from Liberica coffee beans, which are larger in size compared to
+                other coffee varieties.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2
+          class="center-align"
+          style="color: #ffffff; font-weight: 600; font-family: georgia"
+        >
+          About Us
+        </h2>
+
+        <div class="row">
+          <div class="col s12 m6">
+            <img
+              src="index.img/aboutus6.jpg"
+              alt="about us image"
+              style="max-width: 100%; height: auto; margin-top: 90px"
+            />
+            <img
+              src="index.img/aboutus7.png"
+              alt="about us image"
+              style="max-width: 100%; height: auto; margin-top: 40px"
+            />
+          </div>
+          <div class="aboutus col s12 m6">
+            <h1
+              class="center-align"
+              style="
+                color: #ffffff;
+                font-weight: 500;
+                font-family: georgia;
+
+                font-size: 50px;
+                margin-top: 0;
+                margin-bottom: 0.4;
+              "
+            >
+              MY STORY
+            </h1>
+            <p>
+              "Brewtiful" is a coffee brand name that combines wordplay,
+              aesthetic appeal, positive associations, and uniqueness. It aims
+              to convey the message that the coffee produced by this brand is
+              not only delicious but also visually pleasing, creating an
+              enjoyable and memorable coffee experience for customers.
+            </p>
+
+            <p>
+              For me, coffee has never just been a drink; it has always been a
+              passion that inspires my imagination and sense of adventure. I
+              discovered that as a coffee enthusiast, I was continuously looking
+              for novel tastes, brewing techniques, and background information
+              on each cup. I developed a website to share my love of this
+              beautiful beverage with the world as a result of my strong bond
+              with coffee.
+            </p>
+
+            <p>
+              Creating this coffee website started with a straightforward
+              concept: to create a community for coffee lovers to interact,
+              share knowledge, and have deep conversations. I set out on the
+              journey of building a digital environment that celebrates the rich
+              and varied coffee culture, armed with my skills in web design and
+              propelled by my unwavering excitement for coffee.
+            </p>
+
+            <p>
+              As the coffee website grew, so did my appreciation for the
+              incredible people who dedicate their lives to cultivating,
+              roasting, and brewing exceptional coffee. I made it a priority to
+              showcase the stories of passionate coffee farmers, roasters, and
+              baristas who play an integral role in the coffee supply chain. By
+              shining a spotlight on their craftsmanship and dedication, I aim
+              to foster a deeper connection between coffee lovers and the people
+              behind their favorite brews.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <br />
+        <div class="row">
+          <div class="aboutus col s12 m6">
+            <h1
+              class="center-align"
+              style="
+                color: #ffffff;
+                font-weight: 500;
+                font-family: georgia;
+                text-align: center;
+                font-size: 50px;
+                margin-top: 0;
+                margin-bottom: 0.4;
+              "
+            >
+              MISSION
+            </h1>
+
+            <p>
+              With Brewtiful, my goal is to build a community that recognizes
+              the art, diversity, and beauty of coffee. I have a strong desire
+              to impart my expertise, ideas, and love of coffee to those who
+              share my passion for this fine beverage. I want to encourage and
+              enable coffee lovers through my website to explore, educate
+              themselves, and develop a deeper appreciation for the world of
+              coffee.
+            </p>
+            <p>
+              My purpose is centered on my commitment to offering helpful
+              educational tools. I work hard to provide in-depth explanations of
+              brewing methods, coffee origins, and flavor profiles so that
+              coffee enthusiasts will have the information they need to improve
+              their coffee experience. By imparting my knowledge, I wish to
+              improve their comprehension of the nuances of coffee and give them
+              the capacity to make wise decisions.
+            </p>
+
+            <p>
+              My ultimate goal is to foster a profound and enduring respect for
+              coffee as a creative medium, a form of cultural expression, and a
+              force for good. Through my website, I hope to establish
+              connections between individuals who value sustainability,
+              craftsmanship, and the capacity of a simple cup of coffee to
+              foster happiness, inspiration, and deep relationships.
+            </p>
+          </div>
+          <div class="col s12 m6">
+            <img
+              src="index.img/aboutus4.avif"
+              alt="about us image"
+              style="
+                max-width: 100%;
+                height: auto;
+                margin-top: 90px;
+                margin-bottom: 20px;
+              "
+            />
+            <img
+              src="index.img/aboutus5.jpg"
+              alt="about us image"
+              style="max-width: 100%; height: auto; margin-top: 20px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <hr />
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2
+          class="center-align"
+          style="color: #ffffff; font-weight: 600; font-family: georgia"
+        >
+          Contact Us
+        </h2>
+        <div class="row" style="margin-bottom: 0">
+          <div class="col s6 contact-form">
+            <form>
+              <!-- form content -->
+              <div class="input-field">
+                <input type="text" id="name" required style="color: white" />
+                <label for="name" style="color: white">Name</label>
+              </div>
+              <div class="input-field">
+                <input type="email" id="email" required style="color: white" />
+                <label for="email" style="color: white">Email</label>
+              </div>
+              <div class="input-field">
+                <textarea
+                  id="message"
+                  class="materialize-textarea"
+                  required
+                  style="color: white"
+                ></textarea>
+                <label for="message" style="color: white">Message</label>
+              </div>
+
+              <div class="input-field col s12 center-align">
+                <!--Modal Submit Button-->
+                <!-- Modal Trigger -->
+                <a
+                  class="btn modal-trigger"
+                  href="#modal1"
+                  style="background-color: #834d33; color: #fff"
+                  >Submit</a
+                >
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                  <div class="modal-content">
+                    <!-- Modal content -->
+                    <h4>Thank You!</h4>
+                    <p>Your message has been submitted.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a
+                      href="#!"
+                      class="modal-close btn-flat"
+                      style="background-color: #834d33; color: #fff"
+                      >Close</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col s6 contact-info" style="color: white">
+            <!-- contact info content -->
+            <h5
+              style="
+                text-align: center;
+                color: #ffffff;
+                font-weight: 500;
+                font-family: georgia;
+              "
+            >
+              BREWTIFUL
+            </h5>
+            <p style="text-align: justify">
+              Located at Ground Floor, Old National Highway, Brgy. Tagapo, Sta.
+              Rosa City, Laguna, Region IV-A, 4026.
+            </p>
+            <h5>
+              EMAIL me here:
+              <!-- Email Icon -->
+              <a
+                href="mailto:bracerocharlzyvan32@gmail.com"
+                style="color: #ebc9b7; font-size: 35px; margin-right: 27px"
+              >
+                <i class="far fa-envelope"></i>
+              </a>
+            </h5>
+            <h5>Follow the Brewtiful story:</h5>
+
+            <!-- Instagram Icon -->
+            <a
+              href="https://www.instagram.com/nagatooo_13/"
+              target="_blank"
+              style="color: #ebc9b7; font-size: 35px; margin-right: 27px"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <!-- Facebook Icon -->
+            <a
+              href="https://www.facebook.com/itsmeseviCamero"
+              target="_blank"
+              style="color: #ebc9b7; font-size: 35px; margin-right: 27px"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+
+            <!-- Twitter Icon -->
+            <a
+              href="https://twitter.com/i/flow/login?redirect_after_login=%2F"
+              target="_blank"
+              style="color: #ebc9b7; font-size: 35px; margin-right: 27px"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br />
+
+    <!-- arrow up icon -->
+    <a href="#" class="arrow-up">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      // Initialize material box in image cards
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".materialboxed, .circle-image");
+        var instances = M.Materialbox.init(elems, {
+          inDuration: 500, // Duration of the transition in milliseconds when opening the image
+          outDuration: 500, // Duration of the transition in milliseconds when closing the image
+          onOpenStart: function () {
+            // Callback function for when the image is about to be opened
+            console.log("Open start");
+          },
+          onOpenEnd: function () {
+            // Callback function for when the image has been opened
+            console.log("Open end");
+          },
+          onCloseStart: function () {
+            // Callback function for when the image is about to be closed
+            console.log("Close start");
+          },
+          onCloseEnd: function () {
+            // Callback function for when the image has been closed
+            console.log("Close end");
+          },
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Materialize components
+
+        //sidenav
+        //select all elements in the document that have a class of .sidenav
+        //and stores, them in elems
+        var elems = document.querySelectorAll(".sidenav");
+        ////Initialize and configure sidenav elements
+        M.Sidenav.init(elems);
+
+        //id=modal
+        //selects an element with the ID modal1 and assigns it to var modal
+        var modal = document.getElementById("modal1");
+        //Initialize and activate modal
+        M.Modal.init(modal);
+
+        //.modal
+        //select all elements in the document that have a class of .modal
+        var modals = document.querySelectorAll(".modal");
+        //Initialize and configure the modal, enabling its functionality
+        M.Modal.init(modals);
+
+        // Initialize Slider
+        //Selects the first element that has a class of slider
+        //and assign it to var slider
+        //document.querySelector returns the first element
+        var slider = document.querySelector(".slider");
+        M.Slider.init(slider, {
+          indicators: false, //disabling the navigation indicators
+          height: 400,
+          transition: 500,
+          interval: 6000,
+        });
+      });
+    </script>
+  </body>
+</html>
